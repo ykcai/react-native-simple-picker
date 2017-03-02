@@ -144,13 +144,13 @@ class SimplePicker extends Component {
           <View style={styles.modalContainer}>
             <View style={styles.buttonView}>
               <TouchableOpacity onPress={this.onPressCancel}>
-                <Text style={{ color: buttonColor }}>
+                <Text style={{ fontSize: 20, color: buttonColor }}>
                   {this.props.cancelText || 'Cancel'}
                 </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={this.onPressSubmit}>
-                <Text style={{ color: buttonColor }}>
+                <Text style={{ fontSize: 20, color: buttonColor }}>
                   {this.props.confirmText || 'Confirm'}
                 </Text>
               </TouchableOpacity>
