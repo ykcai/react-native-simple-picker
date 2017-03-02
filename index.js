@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
 
 const propTypes = {
   buttonColor: PropTypes.string,
+  buttonSize: PropTypes.number,
   options: PropTypes.array.isRequired,
   labels: PropTypes.array,
   confirmText : PropTypes.string,
@@ -62,6 +63,7 @@ class SimplePicker extends Component {
 
     this.state = {
       buttonColor: this.props.buttonColor || '#007AFF',
+      buttonSize : this.props.buttonSize || 20,
       modalVisible: false,
       selectedOption: this.props.options[0],
     };
@@ -132,7 +134,7 @@ class SimplePicker extends Component {
   }
 
   render() {
-    const { buttonColor } = this.state;
+    const { buttonColor , buttonSize } = this.state;
     const itemStyle = this.props.itemStyle || {};
     return (
       <Modal
@@ -144,13 +146,13 @@ class SimplePicker extends Component {
           <View style={styles.modalContainer}>
             <View style={styles.buttonView}>
               <TouchableOpacity onPress={this.onPressCancel}>
-                <Text style={{ fontSize: 20, color: buttonColor }}>
+                <Text style={{ color: buttonColor , fontSize : buttonSize }}>
                   {this.props.cancelText || 'Cancel'}
                 </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={this.onPressSubmit}>
-                <Text style={{ fontSize: 20, color: buttonColor }}>
+                <Text style={{ color: buttonColor , fontSize : buttonSize }}>
                   {this.props.confirmText || 'Confirm'}
                 </Text>
               </TouchableOpacity>
